@@ -1,0 +1,27 @@
+{
+  "name": "lattice-generator",
+  "version": "0.0.1",
+  "description": "An automatic lattice pattern generator, based on MoonMoonCha's original design.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Xingchen Sun (kiochan) <kio@kiochan.one>",
+  "contributors": [
+    {
+      "name": "Torrekie",
+      "url": "https://github.com/Torrekie"
+    },
+    {
+      "name": "MoonMoonCha",
+      "url": "https://moonmooncha.github.io/Lattice-Generator"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  }
+}

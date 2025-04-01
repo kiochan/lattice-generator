@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="js/main.js"></script>
+        <script src="js/html2canvas.min.js"></script>
+        <script src="js/rgbcolor.js"></script>
+        <script src="js/canvg.js"></script>
+        <!-- <script  src="js/Vibrant.js"></script>
+        <script src="js/Vibrant.min.js"></script>
+        <script type="text/javascript" src="js/rgbaster.js"></script>  -->
+        <link rel="shortcut icon" href="favicon.ico" />
+        <title>格纹宝 Plaid Generator</title>
+    </head>
+    <body>
+        <a href="http://www.matools.com/image-color/?embed" target="_blank">
+            <button title="上传图片，取出主色，请记下三种颜色，以便生成格纹">提取图片色</button>
+        </a>
+        <button onclick="FAQ()" title="">Q&#38;A</button>
+        
+        <!-- <img src="img/maskico.ico" id="mask_ico" style="position: absolute;  width: 20px;margin-top: 20px;margin-left: 10px;"/> -->
+        <button id="maskbutton1" title="每次点击，都能随机生成一个遮罩，如果您感觉卡住了，那只是随机到了同一个遮罩哦~" onclick="onMask(1)">Mask</button>
+        <!--<img src="img/delmaskico.ico" id="mask_ico" style="position: absolute;  width: 20px;margin-top: 19px;margin-left: 7px;"/>-->
+        <button id="maskbutton2" onclick="onMask(0)">No Mask</button>
+        <!--Torrekie: THOSE ICONS SUCKS-->
+        
+        <button id="namebutton" onclick="onName(0)">随机取名</button>
+        <span id="namebutton_span" value="name">   </span>
+        
+        <input type="color" title="背景色" id="color1" value="#ffcccc"/>
+        <input type="color" title="主色1" id="color2" value="#DA70D6"/>
+        <input type="color" title="主色2" id="color3" value="#e5ffe5"/>
+        <form id="colorCnotroll" title="随机辅助色">
+        </form>
+        <input type="button" id="GeButton1" title="随机生成颜色、密度、条纹位置" value="Full-Auto（全随机）" onclick="onLoad(1)">
+        </input>
+        <input type="number" id="numbercolor" title="格纹密度上限" value="3"/>
+        <input type="button" id="GeButton2" title="您可以在上方自定义三个主色以及条纹密度，随机生成辅色和条纹位置" value="Semi-Auto(半随机)"  onclick="onLoad(0)" />
+        <button onclick="predown()" id="down" tab="下载成品文件">下载</button>
+        
+        
+        <div id="div_svg" style="position:absolute;">
+            <div id="svg_img">
+                <svg id="svg_my" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:fixed; left: 50%;"></svg>
+                <div id="img_mask" style="z-index: 1; position: absolute; left:0px; top:0px;"></div>
+            </div>
+        </div>
+        <a href="https://space.bilibili.com/421178217">
+            <img src="img/moonmooncha.png" alt="原作者：月亮猹" style="position: fixed;  bottom: 0px;left:42%;width: 50px;height:20px;"></img>
+        </a>
+        <a href="https://space.bilibili.com/169414691" alt="维护：托莱奇" style="position: fixed;  bottom: 0px;left:50%;width: 50px;height:20px;">托莱奇</a>
+    </body>
+    <!--Torrekie: 我还是把js分离出去吧-->
+</html>
+
+<!--Torrekie: 2020.10.18 2:40 该项目整体毫无代码规范可言，除大量不工整书写外，出现数量极多的严重低级错误导致影响编辑与项目的实际执行。JS代码过于冗杂，后续我会进行优化修复。大量的JS/CSS置入HTML文件中对项目维护极为不利，在本次修改中我将CSS与HTML分离，并修复了出现在HTML中的多项错误。同时将Q&A更改为弹窗（鼠标悬置提示在移动设备不可用）。-->
+
+<!--Torrekie: 2020.10.20 6:53 一时间实在不知道从什么地方下手了，因为改起来确实很费力气。不过月亮猹已经做到一定程度的格式化和文件分离，目前先不pull request，以同步更新为主。-->
+
+<!--Torrekie: 2020.10.20 17:40 文件完成了分离，下一步是修一下页面的自适应，我暂时注释掉了之前的UA判断，后面会改成尺寸判断。svg绘制区域以及下面的按钮的坐标被写死了，所以目前在手机上各种各样的bug-->
