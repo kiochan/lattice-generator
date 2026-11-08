@@ -1,7 +1,17 @@
-# Lattice-Generator
+# Lattice Generator
+
+## Archived — development has moved
+
+This repository is archived and is no longer maintained. It is kept as a historical reference.
+
+Further development continues in the Kiochan web monorepo:
+
+- [Current project source: packages/lab-lattice](https://github.com/kiochan/kiochan-web/tree/dev/packages/lab-lattice)
+- [Try Lattice Generator](https://kiochan.one/lab/lattice)
+
 An automatic lattice pattern generator, based on the original work by MoonMoonCha.
 
-This fork is maintained independently for personal needs and improvements.
+This fork was previously maintained independently for personal needs and improvements.
 
 ## Demonstration
 
